@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"></meta>
+<link rel="stylesheet" type="text/css" media="screen, projection"
+	href="/rulesmaker/styles/rulesmaker-login.css" />
+</head>
+<body>
+	<table id="header" align="center">
+		<tr align="center">
+			<td id="logo" align="center">
+				<div class="it2llogo" id="it2llogo">
+					<a href="#" th:href="@{/main}"> <img
+						src="../../images/iLearnFraction_banner_05.jpg"
+						th:src="@{/resources/images/iLearnFraction_banner_05.jpg}" alt="italk2learn" />
+					</a>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div id="wrapper">
+		<form name="login-form" class="login-form"
+			action="j_spring_security_check" method="post">
+
+			<div class="header">
+				<h1>Login Form</h1>
+				<span>Fill out the form below to login.</span>
+			</div>
+
+			<div class="content">
+				<input name="username" type="text" class="input username"
+					placeholder="Username" />
+				<div class="user-icon"></div>
+				<input name="password" type="password" class="input password"
+					placeholder="Password" />
+				<div class="pass-icon"></div>
+			</div>
+
+			<div class="footer">
+				<input type="submit" name="submit" value="LOGIN" class="button" />
+				<a class="register" href="#" th:href="@{/register}"
+					th:text="#{register}"> Register </a>
+			</div>
+			<span th:text="${error}"
+				style="color: red; font-size: 14px; margin-left: 100px"> </span> <span
+				th:text="${msg}"> </span>
+		</form>
+
+	</div>
+	<div class="gradient"></div>
+</body>
+</html>

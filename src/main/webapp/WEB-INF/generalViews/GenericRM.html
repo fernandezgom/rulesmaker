@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Unity Web Player | WebPlayer</title>
+</head>
+<body tiles:fragment="content">
+	<table id="taskContainer" align="center">
+		<tr>
+			<td><span
+				style="font-size: 17px; color: #0076a3; font-weight: normal;"
+				id="task" align="center" th:text="${taskName}"> </span></td>
+		</tr>
+	</table>
+	<div class="content">
+		<div id="form1"></div>
+	</div>
+</body>
+</html>
