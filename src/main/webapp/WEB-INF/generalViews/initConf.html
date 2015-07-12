@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rules Maker</title>
+</head>
+<body tiles:fragment="content">
+	<table id="taskContainer" align="center">
+		<tr>
+			<td><span
+				style="font-size: 17px; color: #0076a3; font-weight: normal;"
+				id="task" align="center" th:text="${taskName}"> </span></td>
+		</tr>
+	</table>
+	<div class="container">
+		<table>
+			<tr>
+				<th colspan="4"> <span align="center">Initial Configuration </span> </th>
+			</tr>
+			<tr align="left">
+				<td align="left">
+					<input type="checkbox" name="lab" value="lab"/> LAB
+				</td>
+			</tr>
+			<tr align="left">
+				<td align="left">
+					<input type="checkbox" name="lines" value="lines"/> LINES 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="rectangles" value="rectangles"/> RECTANGLES
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="sets" value="sets"/> SETS 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="liquids" value="liquids"/> LIQUIDS 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="color" value="color"/> CHANGE COLOUR 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="copy" value="copy"/> COPY FRACTIONS 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="equiv" value="equiv"/> FIND EQUIVALENCE 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="parent" value="parent"/> FIND PARENT
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="highlight" value="highlight"/> HIGHLIGHT 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="add" value="add"/> ADD 
+				</td>
+			</tr>
+			<tr align="left">	
+				<td align="left">
+					<input type="checkbox" name="substract" value="substract"/> SUBSTACT 
+				</td>
+			</tr>
+			<tr>
+				<td align="right" colspan="3"></td>
+				<td align="right"><input id="icSubmit" name="icSubmit" type="button" value="Submit" /></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

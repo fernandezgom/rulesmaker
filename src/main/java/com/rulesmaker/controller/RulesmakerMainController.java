@@ -8,10 +8,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.rulesmaker.util.TipFilesUtil;
+import com.rulesmaker.vo.TaskVO;
 
 /**
  * Handles and retrieves the login or denied page depending on the URI template
@@ -55,7 +60,7 @@ public class RulesmakerMainController {
 		try {
 			//TipFilesUtil.createTIPFile(currentExerciseName, ec.getExercise().get(currentExerciseName));
 			model.addObject("taskName", "Initial Task to test the rules");
-			model.addObject("idTask", "task1");
+			model.addObject("idTask", "task22");
 			model.setViewName("fractionsLabViews/GenericFL");
 			return model;
 		} catch (Exception e){
@@ -78,6 +83,48 @@ public class RulesmakerMainController {
 			logger.error(e.toString());
 			model.setViewName("redirect:/login");
 			return new ModelAndView();
+		}
+	}
+	
+	@RequestMapping(value = "/rulesMaker/initModel", method = RequestMethod.GET)
+	public ModelAndView getInitialModel() {
+		ModelAndView model = new ModelAndView();
+		try {
+			model.addObject("taskName", "Rules Maker main view");
+			model.setViewName("generalViews/initModel");
+			return model;
+		} catch (Exception e){
+			logger.info("Returning to login due previous errors");
+			logger.error(e.toString());
+			model.setViewName("redirect:/login");
+			return new ModelAndView();
+		}
+	}
+	
+	@RequestMapping(value = "/rulesMaker/initConf", method = RequestMethod.GET)
+	public ModelAndView getInitialConfiguration() {
+		ModelAndView model = new ModelAndView();
+		try {
+			model.addObject("taskName", "Rules Maker main view");
+			model.setViewName("generalViews/initConf");
+			return model;
+		} catch (Exception e){
+			logger.info("Returning to login due previous errors");
+			logger.error(e.toString());
+			model.setViewName("redirect:/login");
+			return new ModelAndView();
+		}
+	}
+	
+	
+	@RequestMapping(value = "/rulesMaker/submitInitial", method = RequestMethod.POST)
+	public @ResponseBody void insertNextExercise(@RequestBody TaskVO task){
+		try {
+			
+			TipFilesUtil.createTIPFile(task);
+			
+		} catch (Exception e){
+			logger.error(e.toString());
 		}
 	}
 

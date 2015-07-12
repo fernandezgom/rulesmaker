@@ -29,3 +29,11 @@ insert into `user_roles`(`user_role_id`,`username`,`ROLE`) values (3,'alex','ROL
 insert into `user_roles`(`user_role_id`,`username`,`ROLE`) values (6,'pedrulo','ROLE_USER');
 insert into `user_roles`(`user_role_id`,`username`,`ROLE`) values (10,'tludmetal2','ROLE_USER');
 
+CREATE TABLE `fltask` (
+  `id_fltask` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(500) NOT NULL,
+  `idtask` varchar(20) NOT NULL,
+  `tip` varchar(10000) DEFAULT NULL,
+  PRIMARY KEY (`id_fltask`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+

@@ -57,18 +57,14 @@
 						}
 					});
 					if (idTask!=null && idTask.length>0){
-						u.initPlugin(jQuery("#unityPlayer")[0], "/rulesmaker/assets/FractionsLab.unity3d?showStartPage=false&language="+nLocale+"&username="+userName+"&tip=/italk2learn/tip/"+idTask+".tip"+"&idtask="+idTask+userName);
+						u.initPlugin(jQuery("#unityPlayer")[0], "/rulesmaker/assets/FractionsLab.unity3d?showStartPage=false&language="+nLocale+"&username="+userName+"&tip=/rulesmaker/tip/"+idTask+".tip"+"&idtask="+idTask+userName);
 						sendLanguageEvent();
 					}
 				});
 				
 				
 				function Flstarted() {
-					if (chTIS==true){
-						sendEventEnabledTIStoTDS(true);
-					} else {
-						sendEventEnabledTIStoTDS(false);
-					}
+					sendEventEnabledTIStoTDS(false);
 				}
 				
 				function getFLTaskID() {

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rules Maker</title>
+</head>
+<body tiles:fragment="content">
+	<table id="taskContainer" align="center">
+		<tr>
+			<td><span
+				style="font-size: 17px; color: #0076a3; font-weight: normal;"
+				id="task" align="center" th:text="${taskName}"> </span></td>
+		</tr>
+	</table>
+	<div class="container">
+		<table>
+			<tr align="left">
+				<td align="left">
+					<table>
+						<tr>
+							<th colspan="4"> <span align="center">Initial Model </span> </th>
+						</tr>
+						<tr>
+							<td>NUMERATOR</td>
+							<td><input id="numerator" name="numerator" type="text" style="width: 200px;"
+								th:value="*{numerator}" /></td>
+						</tr>
+						<tr>
+							<td>DENOMINATOR</td>
+							<td><input id="denominator" name="denominator" type="text" style="width: 200px;"
+								th:value="*{denominator}" /></td>
+						</tr>
+						<tr>
+							<td>PARTITION</td>
+							<td><input id="partition" name="partition" type="text" style="width: 200px;"
+								th:value="*{partition}" /></td>
+						</tr>
+						<tr>
+							<td>POSITION</td>
+							<td>
+								<table>
+									<tr>
+										<td>X</td>
+										<td><input id="posX" name="posX" type="text" style="width: 200px;"
+											th:value="*{posX}" /></td>
+									</tr>
+									<tr>
+										<td>Y</td>
+										<td><input id="posY" name="posY" type="text" style="width: 200px;"
+											th:value="*{posY}" /></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>COLOR</td>
+							<td>
+								<select id="clList">
+									  <option value="1">BLUE</option>
+									  <option value="2">GREEN</option>
+									  <option value="3">RED</option>
+									  <option value="4">WHITE</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>TYPE</td>
+							<td>
+								<select id="typeList">
+									  <option value="1">SET</option>
+									  <option value="2">NUMBERS</option>
+									  <option value="3">LIQUIDS</option>
+									  <option value="4">AREA</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td align="right" colspan="3"></td>
+							<td align="right"><input id="imSubmit"
+								name="imSubmit" type="button" value="Submit" /></td>
+						</tr>
+					</table>
+				</td>
+				<td align="left">
+					<ul>
+					  <li>Item1</li>
+					</ul> 
+				</td>
+			</tr>
+			<tr>
+				<td align="right" colspan="3"></td>
+				<td align="right"><input id="moSubmit" name="moSubmit" type="button" value="Submit" /></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

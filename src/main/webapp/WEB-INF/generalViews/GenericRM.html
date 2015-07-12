@@ -5,7 +5,7 @@
 	xmlns:sec="http://www.thymeleaf.org" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Unity Web Player | WebPlayer</title>
+<title>Rules Maker</title>
 </head>
 <body tiles:fragment="content">
 	<table id="taskContainer" align="center">
@@ -15,8 +15,93 @@
 				id="task" align="center" th:text="${taskName}"> </span></td>
 		</tr>
 	</table>
-	<div class="content">
-		<div id="form1"></div>
+	<div class="container">
+		<table>
+			<tr align="left">
+				<td align="left">
+					<table>
+						<tr>
+							<th colspan="4"> <span align="center">Create new task </span> </th>
+						</tr>
+						<tr>
+							<td>NAME</td>
+							<td><input id="nameTip" name="nameTip" type="text" style="width: 200px;"
+								th:value="*{nameTip}" /></td>
+							<td>IDTASK</td>
+							<td><input id="idTask" name="idTask" type="text" style="width: 200px;"
+								th:value="*{idTask}" /></td>
+						</tr>
+						<tr>
+							<td>DESCRIPTION</td>
+							<td align="right" colspan="4"><textarea rows="3" cols="80"
+									id="desc" name="desc">
+							</textarea></td>
+						</tr>
+						<tr>
+							<td align="right" colspan="3"></td>
+							<td align="right"><input id="ntSubmit"
+								name="ntSubmit" type="button" value="Submit" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr align="left">
+				<td align="left">
+					<table>
+						<tr>
+							<th colspan="4"> <span align="center">Create new rule </span> </th>
+						</tr>
+						<tr>
+							<td>TASKS</td>
+							<td>
+								<select id="taskList">
+									<option th:each="task : ${allTasks}" th:value="${task.idTask}" th:text="${task.name}">Option</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>IF</td>
+							<td>
+								<select id="ifList">
+									<option th:each="opIf : ${allIf}" th:value="${if.idIf}" th:text="${if.name}">Option</option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>THEN (SOCRATIC)</td>
+							<td align="right" colspan="4">
+								<textarea rows="3" cols="80" id="thenSc" name="thenSc"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>THEN (GUIDANCE)</td>
+							<td align="right" colspan="4">
+								<textarea rows="3" cols="80" id="thenGu" name="thenGu"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>THEN (DIDACTIC CONCEPTUAL)</td>
+							<td align="right" colspan="4">
+								<textarea rows="3" cols="80" id="thenDi" name="thenDi"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>THEN (HIGHLIGHT)</td>
+							<td align="right" colspan="4">
+								<textarea rows="3" cols="80" id="thenHi" name="thenHi"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td align="right" colspan="3"></td>
+							<td align="right"><input id="rlSubmit"
+								name="rlSubmit" type="button" value="Submit" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+		</table>
 	</div>
 </body>
 </html>

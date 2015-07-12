@@ -12,7 +12,7 @@
 				if (rm==true){
 					goToFractionsLab();
 				} else {
-					goToRules();
+					goToRules("");
 				}
 			});	
 		});
@@ -46,15 +46,16 @@
 		    });
 		}
 		
-		function goToRules(){
+		function goToRules(val){
 		    $.ajax({
 		        type: 'GET',
-		        url: "rulesMaker/",
+		        url: "rulesMaker/"+val,
 		        data: {
 		            
 		            },
 		        success: function(data, textStatus, jqXHR) {
 		        	$("#rm").val("FL");
+		        	$("#help").hide();
 		        	rm=true;
 		        	document.getElementById("mainContainer").innerHTML=jqXHR.responseText;
 		            var reponse = jQuery(jqXHR.responseText);
