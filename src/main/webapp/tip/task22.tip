@@ -1,6 +1,27 @@
 {
   "initial_model": [
-
+    {
+      "numerator": 1,
+      "denominator": 2,
+      "partition": 1,
+      "type": "Liquid",
+      "position": {
+        "x": 4,
+        "y": 0
+      },
+      "color": "blue"
+    },
+    {
+      "numerator": 4,
+      "denominator": 3,
+      "partition": 1,
+      "type": "MoonSet",
+      "position": {
+        "x": -4,
+        "y": 0
+      },
+      "color": "yellow"
+    }
   ],
   "initial_configuration": [
     {
@@ -9,7 +30,7 @@
     },
     {
       "item": "lines",
-      "active": true
+      "active": false
     },
     {
       "item": "rectangles",
@@ -53,6 +74,16 @@
     }
   ],
   "extra_information": {
-  } 
+  },
+  "task_description": {
+    "id": "idtask",
+    "title": "Task01",
+    "desctiption": "Example of task description",
+    "showAtStartup": "false"
+  },
+  "rules":{
+   
+  }	
+  
 }
 
